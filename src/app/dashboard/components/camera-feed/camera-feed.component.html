@@ -1,1 +1,9 @@
-<p>camera-feed works!</p>
+<div class="camera-card" *ngFor="let camera of cameras">
+  <img [src]="camera.imageUrl" alt="{{ camera.name }}" />
+  <div class="info">
+    <h3>{{ camera.name }}</h3>
+    <p><strong>Last Update:</strong> {{ camera.lastUpdate }}</p>
+    <p><strong>Last Detection:</strong> {{ camera.lastDetection }}</p>
+    <p class="status" [class.online]="camera.status === 'Online'">{{ camera.status }}</p>
+  </div>
+</div>
