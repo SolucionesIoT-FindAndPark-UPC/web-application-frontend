@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="logo-container">
+    <img
+      src="LOGO.png"
+      alt="ParkPlus Logo"
+      class="logo"/>
+    <h1>ARK <span class="blue">UP</span></h1>
+  </div>
+  <div class="white-border-container">
+    <div class="white-border"></div>
+  </div>
+  <div class="actions-container">
+    <input class="search" type="text" placeholder="Buscar..." />
+    <div class="user-container">
+      <fa-icon size="2x" [icon]="icons.bell" class="clickable"></fa-icon>
+      <img [src]="getIconCache()" alt="User Icon" class="user-icon" />
+      <p class="clickable">{{getUsernameCache()}}</p>
+      <fa-icon [icon]="icons.chevronDown" class="clickable"></fa-icon>
+    </div>
+  </div>
+</div>
+<div class="white-border-below"></div>
