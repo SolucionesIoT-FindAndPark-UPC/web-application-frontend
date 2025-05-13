@@ -1,0 +1,51 @@
+.notifications-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 20px; 
+  overflow: hidden;
+  width: calc(100% - 40px);
+  box-sizing: border-box; 
+}
+
+.notifications-scroll {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 12px;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.notifications-scroll::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}
+
+.notification {
+  padding: 12px 20px;
+  background: white;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.notification:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.notification:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification p {
+  margin: 0;
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
+}
