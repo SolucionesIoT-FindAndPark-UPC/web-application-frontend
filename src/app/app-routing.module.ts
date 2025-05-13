@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './public/components/page-not-found/page-not-found.component';
 import { FeedComponent } from './dashboard/components/feed/feed.component';
+import {ParkingLotsComponent} from './parking-lots/pages/parking-lots/parking-lots.component';
 
 const routes: Routes = [
   {path: 'dashboard-page', component: FeedComponent},
-  {path: '', redirectTo: '/dashboard-page', pathMatch: 'full' },
+  {path: 'parking-lots', component: ParkingLotsComponent},
+  {path: '', redirectTo: 'dashboard-page', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent }
 ];
 
