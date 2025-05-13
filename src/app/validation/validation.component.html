@@ -1,1 +1,57 @@
-<p>validation works!</p>
+<div class="subscription-container">
+  <h2>SUBSCRIBE YOUR MALL</h2>
+    <div class="form-group">
+      <label for="mallName">Mall Name</label>
+      <input 
+        type="text" 
+        id="mallName" 
+        formControlName="mallName" 
+        placeholder="Enter mall name"
+        required>
+      <div *ngIf="subscriptionForm.get('mallName')?.invalid && subscriptionForm.get('mallName')?.touched" 
+           class="error-message">
+        Mall name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address1">Address 1</label>
+      <input 
+        type="text" 
+        id="address1" 
+        formControlName="address1" 
+        placeholder="Enter primary address"
+        required>
+      <div *ngIf="subscriptionForm.get('address1')?.invalid && subscriptionForm.get('address1')?.touched" 
+           class="error-message">
+        Address is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address2">Address 2 (Optional)</label>
+      <input 
+        type="text" 
+        id="address2" 
+        formControlName="address2" 
+        placeholder="Enter secondary address">
+    </div>
+
+    <div class="form-group">
+      <label for="additionalInfo">Additional Info</label>
+      <textarea 
+        id="additionalInfo" 
+        formControlName="additionalInfo" 
+        placeholder="Enter any additional information"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Interactive Map (References Purposes)</label>
+      <div class="map-container">
+        <!-- Aquí iría la integración con Google Maps o similar -->
+        <p>Map integration placeholder</p>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="subscriptionForm.invalid">Submit</button>
+</div>
