@@ -108,3 +108,93 @@
   font-weight: 600;
   text-align: right;
 }
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 8px 4px 6px;
+  border-radius: 12px;
+  background-color: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
+  transition: all 0.3s ease;
+}
+
+.status-badge.online {
+  background-color: rgba(56, 161, 105, 0.1);
+  color: #38a169;
+}
+
+.status-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background-color: #e53e3e;
+  box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.status-icon::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 1px solid #e53e3e;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.status-badge.online .status-icon {
+  background-color: #38a169;
+  box-shadow: 0 0 0 2px rgba(56, 161, 105, 0.3);
+  animation: pulse-online 2s infinite;
+}
+
+.status-badge.online .status-icon::after {
+  border-color: #38a169;
+}
+
+.status-badge:hover .status-icon {
+  transform: scale(1.2);
+}
+
+.status-badge:hover .status-icon::after {
+  opacity: 0.3;
+}
+
+@keyframes pulse-online {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 161, 105, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(56, 161, 105, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 161, 105, 0);
+  }
+}
+
+.status-badge:not(.online):hover .status-icon {
+  animation: pulse-offline 2s infinite;
+}
+
+@keyframes pulse-offline {
+  0% {
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(229, 62, 62, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0);
+  }
+}
