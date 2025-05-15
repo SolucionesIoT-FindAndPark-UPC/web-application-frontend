@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {HeaderComponent} from '../../../shared/components/header/header.component';
 import {faBicycle, faCar, faCheck, faCircleDot, faFilter, faTaxi} from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
-import {NgClass, NgForOf, NgIf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-parking-lots',

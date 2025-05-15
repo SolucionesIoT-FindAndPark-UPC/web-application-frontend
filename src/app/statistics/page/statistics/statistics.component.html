@@ -1,0 +1,38 @@
+<!-- app-header (your layout) -->
+<app-header>
+  <div class="statistics-container">
+    <div class="statistics-header">
+      <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+      <h1>Statistics</h1>
+    </div>
+    <div class="statistics-cards">
+      <div class="stat-card">
+        <span class="stat-label">Vehicles Parked</span>
+        <span class="stat-value">80</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Revenue Today</span>
+        <span class="stat-value">$1,204.50</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Average Parking Time</span>
+        <span class="stat-value">3h 10m</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Available Spaces</span>
+        <span class="stat-value">80/120</span>
+      </div>
+    </div>
+    <div class="statistics-charts">
+      <div class="chart-section">
+        <span class="chart-label">Daily Activity</span>
+        <canvas id="dailyActivityChart" height="180"></canvas>
+      </div>
+      <div class="chart-section">
+        <span class="chart-label">Revenue Breakdown</span>
+        <canvas id="revenueBreakdownChart" height="180"></canvas>
+      </div>
+    </div>
+  </div>
+
+</app-header>

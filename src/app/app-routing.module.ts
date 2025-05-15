@@ -8,6 +8,8 @@ import {MonitoringComponent} from './monitoring/monitoring.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ValidationComponent } from './validation/validation.component';
+import {StatisticsComponent} from './statistics/page/statistics/statistics.component';
+import {ProfileComponent} from './profiles/pages/profile/profile.component';
 
 const routes: Routes = [
   {path: 'monitoring-page', component: MonitoringComponent},
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'validation', component: ValidationComponent},
+  {path: 'statistics', component: StatisticsComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: '', redirectTo: 'dashboard-page', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent }
 ];

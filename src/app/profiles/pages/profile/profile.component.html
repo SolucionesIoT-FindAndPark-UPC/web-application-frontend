@@ -1,0 +1,66 @@
+<app-header>
+  <div class="account-settings-container">
+    <div class="settings-header-row">
+      <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+      <span class="back-label">Feed</span>
+    </div>
+
+    <div class="settings-content">
+      <div class="settings-form-col">
+        <h1 class="settings-title">Account Settings</h1>
+        <form>
+          <div class="settings-fields-row">
+            <div class="settings-field">
+              <label for="firstName">First Name</label>
+              <input id="firstName" type="text" />
+            </div>
+            <div class="settings-field">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" type="text" />
+            </div>
+          </div>
+
+          <div class="settings-fields-row">
+            <div class="settings-field">
+              <label for="email">Email</label>
+              <input id="email" type="email" />
+            </div>
+            <div class="settings-field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="tel" />
+            </div>
+          </div>
+
+          <div class="settings-fields-row">
+            <div class="settings-field gender-field">
+              <label>Gender</label>
+              <div class="gender-options">
+                <label><input type="radio" name="gender" /> Male</label>
+                <label><input type="radio" name="gender" /> Female</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-fields-row">
+            <div class="settings-field w-full">
+              <label for="location">Mall Location</label>
+              <input id="location" type="text" />
+            </div>
+          </div>
+
+          <div class="settings-fields-row">
+            <button class="save-btn" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+      <div class="settings-avatar-col">
+        <img [src]="getIconCache()" alt="Profile photo" class="profile-avatar" />
+        <div class="settings-photo-btns">
+          <button class="delete-photo-btn" type="button">Delete Photo</button>
+          <button class="upload-photo-btn" type="button">Upload New</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</app-header>
