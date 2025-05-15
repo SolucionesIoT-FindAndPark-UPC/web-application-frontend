@@ -4,8 +4,10 @@ import { PageNotFoundComponent } from './public/components/page-not-found/page-n
 import { FeedComponent } from './dashboard/components/feed/feed.component';
 import {ParkingLotsComponent} from './parking-lots/pages/parking-lots/parking-lots.component';
 import {AllotmentComponent} from './allotment/allotment.component';
+import {MonitoringComponent} from './monitoring/monitoring.component';
 
 const routes: Routes = [
+  {path: 'monitoring-page', component: MonitoringComponent},
   {path: 'dashboard-page', component: FeedComponent},
   {path: 'parking-lots', component: ParkingLotsComponent},
   {path: 'allotment', component: AllotmentComponent},
