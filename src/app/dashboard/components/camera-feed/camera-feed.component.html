@@ -1,0 +1,35 @@
+<div class="camera-feed-container">
+  <div class="camera-card" *ngFor="let camera of cameras">
+    <div class="camera-image-container">
+      <img [src]="camera.imageUrl" alt="{{ camera.name }}" class="camera-image" />
+      <div class="overlay"></div>
+    </div>
+    
+    <div class="camera-info">
+      <div class="header-row">
+        <div class="name-col">
+          <h3 class="camera-name">{{ camera.name }}</h3>
+        </div>
+        <div class="status-col">
+          <div class="status-wrapper">
+            <span class="status-badge" [class.online]="camera.status === 'Online'">
+              <span class="status-icon"></span>
+              {{ camera.status }}
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="details-section">
+        <div class="detail-item">
+          <span class="detail-label">Última actualización:</span>
+          <span class="detail-value">{{ camera.lastUpdate }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Última detección:</span>
+          <span class="detail-value">{{ camera.lastDetection }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
