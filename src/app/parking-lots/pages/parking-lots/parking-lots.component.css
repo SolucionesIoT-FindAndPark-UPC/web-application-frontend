@@ -1,0 +1,79 @@
+.content {
+  padding: 24px;
+}
+
+.white-line {
+  border-top: 1px solid #e0e0e0;
+  margin: 16px 0;
+}
+
+.parking-lot-availability-container {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.availability-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.available {
+  color: #4caf50;
+}
+
+.unavailable {
+  color: #f44336;
+}
+
+.filter-container {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.filters-icon-container {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-option {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.parking-lots-container {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.lots-matrix {
+  display: flex;
+  flex-direction: column;
+}
+.lots-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.lot {
+  border: 2px solid #fff;
+  background: #181a22;
+  color: #fff;
+  width: 48px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}

@@ -1,0 +1,24 @@
+<!-- camera-monitor.component.html -->
+<div class="monitoring">
+
+<div class="camera-grid">
+  <div class="camera-tile" *ngFor="let camera of cameras" (click)="selectCamera(camera)">
+    <img [src]="camera.imageUrl" [alt]="camera.name">
+    <div class="camera-info">
+      <h4>{{ camera.name }}</h4>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedCamera" (click)="deselectCamera()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="deselectCamera()" aria-label="Cerrar">✕</button>
+    <h2>{{ selectedCamera.name }}</h2>
+    <img [src]="selectedCamera.imageUrl" [alt]="selectedCamera.name">
+    <p><strong>Ubicación:</strong> {{ selectedCamera.location }}</p>
+    <p><strong>Estado:</strong> {{ selectedCamera.status }}</p>
+    <p>{{ selectedCamera.description }}</p>
+  </div>
+</div>
+</div>
+
