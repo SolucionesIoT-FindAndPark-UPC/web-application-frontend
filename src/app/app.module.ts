@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-
+import {AllotmentComponent} from './allotment/allotment.component';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +20,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     RouterModule,
     HttpClientModule,
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AllotmentComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
