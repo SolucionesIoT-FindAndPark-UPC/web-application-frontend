@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // <--- Importa el Router
 
 @Component({
   selector: 'app-login',
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  constructor(private router: Router) {} // <--- Inyecta el Router
+
+  onSubmit(): void {
+    // Redirige al componente Monitoring
+    this.router.navigate(['/monitoring-page']);
+  }
 }
