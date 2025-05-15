@@ -1,6 +1,8 @@
 <!-- validation.component.html -->
 <div class="container">
   <div class="card">
+
+    <!-- Izquierda: Formulario -->
     <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="form-section">
       <h2>SUBSCRIBE YOUR MALL</h2>
       <p>Enter all parking Mall info</p>
@@ -9,13 +11,15 @@
       <input type="text" formControlName="address1" placeholder="Address 1" class="input" />
       <input type="text" formControlName="address2" placeholder="Address 2" class="input" />
       <textarea formControlName="additionalInfo" placeholder="Aditional Info" class="textarea"></textarea>
-
-      <button type="submit" class="finish-button">FINISH</button>
     </form>
 
+    <!-- Derecha: Mapa y botón -->
     <div class="map-section">
       <p class="map-title">Interactive Map (References Purposes)</p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/OpenStreetMap_Map_Mapnik.png" alt="Map" class="map-img" />
+
+      <button type="submit" class="finish-button" (click)="onSubmit()">FINISH</button>
     </div>
+
   </div>
 </div>

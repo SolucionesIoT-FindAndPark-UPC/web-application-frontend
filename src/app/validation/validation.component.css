@@ -14,7 +14,6 @@
   padding: 2rem;
   border-radius: 24px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
@@ -84,7 +83,6 @@
   border-radius: 24px;
   cursor: pointer;
   transition: 0.3s ease;
-  align-self: flex-start;
 }
 
 .finish-button:hover {
