@@ -6,7 +6,7 @@ import {NgClass, NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-parking-lots',
-  imports: [HeaderComponent, FaIconComponent, NgForOf, NgIf, NgClass],
+  imports: [HeaderComponent, FaIconComponent, NgForOf, NgIf],
   templateUrl: './parking-lots.component.html',
   standalone: true,
   styleUrl: './parking-lots.component.css'

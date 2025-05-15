@@ -6,12 +6,13 @@ import { CommonModule } from '@angular/common';
 import { HttpDataService } from '../../../services/http-data.service';
 import { Camera } from '../../../models/camera.model';
 import { Notification } from '../../../models/notification.model';
+import { HeaderComponent } from "../../../shared/components/header/header.component";
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css'],
-  imports: [CommonModule, CameraFeedComponent, NotificationsBarComponent],
+  imports: [CommonModule, CameraFeedComponent, NotificationsBarComponent, HeaderComponent],
   providers: [HttpDataService]
 })
 export class FeedComponent implements OnInit {
