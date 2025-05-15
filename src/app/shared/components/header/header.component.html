@@ -12,19 +12,25 @@
     </div>
     <div class="actions-container">
       <input class="search" type="text" placeholder="Buscar..." />
-      <div class="user-container">
-        <fa-icon size="2x" [icon]="icons.bell" class="clickable"></fa-icon>
-        <img [src]="getIconCache()" alt="User Icon" class="user-icon" />
-        <p class="clickable">{{getUsernameCache()}}</p>
-        <fa-icon [icon]="icons.chevronDown" class="clickable"></fa-icon>
+      <div class="user-dropdown-wrapper">
+        <div class="user-container" (click)="toggleDropdown()">
+          <fa-icon size="2x" [icon]="icons.bell" class="clickable"></fa-icon>
+          <img [src]="getIconCache()" alt="User Icon" class="user-icon"/>
+          <p class="clickable">{{getUsernameCache()}}</p>
+          <fa-icon [icon]="icons.chevronDown" class="clickable"></fa-icon>
+        </div>
+        <div class="user-dropdown-menu" *ngIf="dropdownOpen">
+          <div class="dropdown-item" >Profile</div>
+          <div class="dropdown-item" >Settings</div>
+        </div>
       </div>
     </div>
-  </div>
+    </div>
   <div>
     <div class="white-border-below"></div>
     <div class="sidebar">
       <div class="options-container">
-        <div *ngFor="let option of options" class="option clickable">
+        <div *ngFor="let option of options" class="option clickable" (click)="goTo(option.route)">
           <fa-icon [icon]="option.icon" size="2x"></fa-icon>
           <h1>{{option.name}}</h1>
         </div>
@@ -33,7 +39,7 @@
     <div class="white-border-below-small"></div>
     <div class="setting-sidebar">
       <div class="setting-container">
-        <div class="option clickable">
+        <div class="option clickable" (click)="goTo(routes.settings)">
           <fa-icon [icon]="icons.settings" size="2x"></fa-icon>
           <h1>Settings</h1>
         </div>

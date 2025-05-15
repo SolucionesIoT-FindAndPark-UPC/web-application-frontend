@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'validation', component: ValidationComponent},
   {path: 'statistics', component: StatisticsComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: '', redirectTo: 'dashboard-page', pathMatch: 'full' },
+  {path: 'settings', component: ProfileComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent }
 ];
 
