@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
-import {faBell, faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import {
+  faBell,
+  faCamera,
+  faChartBar, faChartLine,
+  faChevronDown, faGear, faParking,
+  faTicketSimple,
+} from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-header',
   imports: [
-    FaIconComponent
+    FaIconComponent,
+    NgForOf
   ],
   templateUrl: './header.component.html',
   standalone: true,
@@ -14,7 +22,22 @@ import {FaIconComponent} from '@fortawesome/angular-fontawesome';
 export class HeaderComponent {
   icons = {
     bell: faBell,
-    chevronDown: faChevronDown
+    chevronDown: faChevronDown,
+    settings: faGear
+  }
+  options = [
+    { name: 'Feed', icon: faChartBar },
+    { name: 'Monitoring', icon: faCamera },
+    { name: 'Allotment', icon: faParking },
+    { name: 'Parking Fee', icon: faTicketSimple },
+    { name: 'Statistics', icon: faChartLine },
+  ]
+  sidebarOptions = {
+    feed: 'Feed',
+    monitoring: 'Monitoring',
+    allotment: 'Allotment',
+    parking_fee: 'Parking Fee',
+    statistics: 'Statistics',
   }
   usernameCache = null;
   iconCache = null;
@@ -35,4 +58,6 @@ export class HeaderComponent {
       return 'John Doe';
     }
   }
+
+  protected readonly faChartBar = faChartBar;
 }
