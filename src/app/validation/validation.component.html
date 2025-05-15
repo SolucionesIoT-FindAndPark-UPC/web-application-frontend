@@ -1,57 +1,21 @@
-<div class="subscription-container">
-  <h2>SUBSCRIBE YOUR MALL</h2>
-    <div class="form-group">
-      <label for="mallName">Mall Name</label>
-      <input 
-        type="text" 
-        id="mallName" 
-        formControlName="mallName" 
-        placeholder="Enter mall name"
-        required>
-      <div *ngIf="subscriptionForm.get('mallName')?.invalid && subscriptionForm.get('mallName')?.touched" 
-           class="error-message">
-        Mall name is required
-      </div>
-    </div>
+<!-- validation.component.html -->
+<div class="container">
+  <div class="card">
+    <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="form-section">
+      <h2>SUBSCRIBE YOUR MALL</h2>
+      <p>Enter all parking Mall info</p>
 
-    <div class="form-group">
-      <label for="address1">Address 1</label>
-      <input 
-        type="text" 
-        id="address1" 
-        formControlName="address1" 
-        placeholder="Enter primary address"
-        required>
-      <div *ngIf="subscriptionForm.get('address1')?.invalid && subscriptionForm.get('address1')?.touched" 
-           class="error-message">
-        Address is required
-      </div>
-    </div>
+      <input type="text" formControlName="mallName" placeholder="Mall Name" class="input" />
+      <input type="text" formControlName="address1" placeholder="Address 1" class="input" />
+      <input type="text" formControlName="address2" placeholder="Address 2" class="input" />
+      <textarea formControlName="additionalInfo" placeholder="Aditional Info" class="textarea"></textarea>
 
-    <div class="form-group">
-      <label for="address2">Address 2 (Optional)</label>
-      <input 
-        type="text" 
-        id="address2" 
-        formControlName="address2" 
-        placeholder="Enter secondary address">
-    </div>
+      <button type="submit" class="finish-button">FINISH</button>
+    </form>
 
-    <div class="form-group">
-      <label for="additionalInfo">Additional Info</label>
-      <textarea 
-        id="additionalInfo" 
-        formControlName="additionalInfo" 
-        placeholder="Enter any additional information"></textarea>
+    <div class="map-section">
+      <p class="map-title">Interactive Map (References Purposes)</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/OpenStreetMap_Map_Mapnik.png" alt="Map" class="map-img" />
     </div>
-
-    <div class="form-group">
-      <label>Interactive Map (References Purposes)</label>
-      <div class="map-container">
-        <!-- Aquí iría la integración con Google Maps o similar -->
-        <p>Map integration placeholder</p>
-      </div>
-    </div>
-
-    <button type="submit" [disabled]="subscriptionForm.invalid">Submit</button>
+  </div>
 </div>
