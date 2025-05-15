@@ -1,0 +1,181 @@
+.account-settings-container {
+  background: #23283a;
+  border-radius: 24px;
+  margin: 40px auto 0 auto;
+  padding: 34px 44px 34px 44px;
+  max-width: 950px;
+  min-width: 340px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+.settings-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 5px 0 0;
+}
+
+.back-label {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.settings-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.settings-content {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.settings-form-col {
+  flex: 1;
+  min-width: 280px;
+}
+
+.settings-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 210px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #363b54;
+  margin-bottom: 15px;
+  background: #444;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.17);
+}
+
+.settings-photo-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.delete-photo-btn {
+  background: #c93c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(201, 60, 60, 0.18);
+}
+
+.upload-photo-btn {
+  background: linear-gradient(90deg, #7b3ff2, #b47cf8);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(123, 63, 242, 0.14);
+}
+
+.settings-fields-row {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+}
+
+.settings-field label {
+  color: #cfcfd8;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.settings-field input[type="text"],
+.settings-field input[type="email"],
+.settings-field input[type="tel"] {
+  border: 2px solid #cfcfd8;
+  border-radius: 18px;
+  padding: 7px 18px;
+  background: none;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.settings-field input:focus {
+  border: 2px solid #7b3ff2;
+}
+
+.gender-field .gender-options {
+  display: flex;
+  gap: 18px;
+}
+
+.gender-field label {
+  color: #fff;
+  font-weight: 400;
+}
+
+.gender-options input[type="radio"] {
+  accent-color: #7b3ff2;
+  margin-right: 5px;
+}
+
+.save-btn {
+  background: linear-gradient(90deg, #7b3ff2, #b47cf8);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(123, 63, 242, 0.15);
+  transition: background 0.2s;
+}
+
+.save-btn:hover {
+  background: linear-gradient(90deg, #6a38c5, #9b64cf);
+}
+
+@media (max-width: 900px) {
+  .account-settings-container {
+    padding: 18px 2vw;
+  }
+  .settings-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .settings-avatar-col {
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+}
