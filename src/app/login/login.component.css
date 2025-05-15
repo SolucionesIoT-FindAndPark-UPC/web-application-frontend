@@ -1,5 +1,6 @@
 .login-page {
   display: flex;
+  flex-direction: row;
   height: 100vh;
   width: 100%;
   font-family: Arial, sans-serif;
@@ -18,13 +19,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .form-box {
   background-color: white;
   border-radius: 25px;
   padding: 40px;
-  width: 80%;
+  width: 100%;
   max-width: 400px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -32,8 +34,9 @@
 
 .logo-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -41,18 +44,20 @@
 }
 
 h2 {
-  margin: 20px 0;
+  margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .input-field {
+  box-sizing: border-box;
   width: 100%;
   padding: 12px;
   margin: 10px 0;
   border: none;
   border-radius: 20px;
   background-color: #d6d7db;
+  font-size: 1rem;
 }
 
 .forgot {
@@ -69,6 +74,8 @@ h2 {
 .button-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 20px;
 }
 
@@ -79,6 +86,7 @@ h2 {
   border: 1px solid black;
   background: none;
   cursor: pointer;
+  flex: 1 1 calc(50% - 10px);
 }
 
 .btn-outline:hover {
@@ -94,3 +102,39 @@ h2 {
   background-color: #d4ac0d;
 }
 
+/* 🔽 Responsive adjustments */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left-image {
+    height: 200px;
+    flex: none;
+    background-position: top;
+  }
+
+  .right-form {
+    flex: none;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-box {
+    padding: 20px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .btn-outline, .btn-filled {
+    width: 100%;
+  }
+}
