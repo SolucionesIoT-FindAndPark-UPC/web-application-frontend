@@ -7,14 +7,15 @@ import {
   faTicketSimple,
 } from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   imports: [
     FaIconComponent,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './header.component.html',
   standalone: true,
