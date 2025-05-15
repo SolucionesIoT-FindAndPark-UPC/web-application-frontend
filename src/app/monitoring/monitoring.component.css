@@ -1,0 +1,84 @@
+/* Wrapper that enables scrolling */
+.monitoring{
+  background-color: #2E3447;
+  padding-top: 1rem;
+}
+/* Grid that supports dynamic number of cameras */
+.camera-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 5rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.camera-tile {
+  background-color: transparent;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  margin-top: -3rem;
+}
+
+
+/* Camera image */
+.camera-tile img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+/* Minimal camera title under image */
+.camera-info {
+  font-size: 0.75rem;
+  color: #E3E3E3;
+  font-weight: 500;
+  padding-left: 1rem;
+}
+
+/* Optional modal overlay (still used) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  font-family: 'Segoe UI', sans-serif;
+
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.modal-content button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
