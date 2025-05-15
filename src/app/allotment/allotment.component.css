@@ -1,0 +1,370 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.parking-lots-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1E2337;
+  color: white;
+}
+
+.sidebar {
+  background-color: #2E3447;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  background-color: #5E677D;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.app-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.up {
+  color: #50A3E7;
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item.active {
+  background-color: #434C5E;
+}
+
+.nav-item:hover {
+  background-color: #434C5E;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  background-color: #B0B8C4;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.nav-icon.monitoring {
+  mask-image: url('https://i.postimg.cc/br4zR0Fv/monitoring-icon.png');
+  background-color: #B0B8C4;
+}
+
+.nav-item.allotment .nav-icon {
+  background-color: #50A3E7;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+.nav-icon.fee {
+  mask-image: url('https://i.postimg.cc/J0F989Lg/parking-fee-icon.png');
+  background-color: #B0B8C4;
+}
+
+.nav-icon.stats {
+  mask-image: url('https://i.postimg.cc/W1qF2P0D/statistics-icon.png');
+  background-color: #B0B8C4;
+}
+
+.nav-item span {
+  font-size: 1rem;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings:hover {
+  background-color: #434C5E;
+}
+
+.settings-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  mask-image: url('https://i.postimg.cc/pVnB94xC/settings-icon.png');
+  background-color: #B0B8C4;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.settings span {
+  font-size: 1rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  font-size: 1rem;
+  color: #B0B8C4;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  mask-image: url('https://i.postimg.cc/GtS0Nq7N/notification-icon.png');
+  background-color: #B0B8C4;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #778899;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.dropdown-arrow {
+  width: 10px;
+  height: 10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #B0B8C4;
+  cursor: pointer;
+}
+
+.availability-section {
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.availability-title {
+  font-size: 1.1rem;
+  color: #B0B8C4;
+  margin-bottom: 10px;
+}
+
+.availability-numbers {
+  display: flex;
+  gap: 20px;
+}
+
+.occupied,
+.free {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.red {
+  background-color: #E56B6F;
+}
+
+.green {
+  background-color: #90EE90;
+}
+
+.content-area {
+  display: flex;
+}
+
+.filters-container {
+  background-color: #2E3447;
+  border-radius: 8px;
+  padding: 15px;
+  margin-right: 20px;
+  width: 200px;
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #B0B8C4;
+}
+
+.filter-icon {
+  width: 20px;
+  height: 20px;
+  mask-image: url('https://i.postimg.cc/Y0Bf9z0f/filter-icon.png');
+  background-color: #B0B8C4;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-button {
+  background-color: #434C5E;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #5E677D;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #B0B8C4;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.car-icon {
+  mask-image: url('https://i.postimg.cc/C5Dddztd/car.png');
+}
+
+.bike-icon {
+  mask-image: url('https://i.postimg.cc/nzNCHv36/bicycle.png');
+}
+
+.taxi-icon {
+  mask-image: url('https://i.postimg.cc/WbGhvqgH/taxi-1.png');
+}
+
+.parking-lots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  height: 120px;
+}
+
+.lot {
+  background-color: #3B4252;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  color: #B0B8C4;
+  position: relative;
+  font-size: 30px;
+}
+
+.lot.free {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.lot.occupied {
+  background-color: #F44336;
+  color: white;
+}
+
+.occupied-icon,
+.free-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 16px;
+  height: 16px;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.occupied-icon {
+  mask-image: url('https://i.postimg.cc/C5Dddztd/car.png');
+  background-color: white;
+}
+
+.free-icon {
+  mask-image: url('https://i.postimg.cc/C5Dddztd/car.png');
+  background-color: white;
+}
