@@ -1,6 +1,49 @@
 <app-header>
-  <h1>xd</h1>
-  <h1>xd</h1>
-  <h1>xd</h1>
+  <div class="content">
+    <h1>Mall at Millenia</h1>
+    <div class="white-line"></div>
+    <div class="parking-lot-availability-container">
+      <h2>PARKING LOT AVAILABILITY</h2>
+      <div class="availability-container">
+        <fa-icon [icon]="icons.circleDot" size="2x" class="unavailable"></fa-icon>
+        <h2>1000</h2>
+      </div>
+      <div class="availability-container">
+        <fa-icon [icon]="icons.circleDot" size="2x" class="available"></fa-icon>
+        <h2>400</h2>
+      </div>
+    </div>
+    <div class="parking-lots-container">
+      <div class="filter-container">
+        <div class="filters-icon-container">
+          <h2>Filters</h2>
+          <fa-icon [icon]="icons.filter" size="2x" class="filter-icon"></fa-icon>
+        </div>
+        <div *ngFor="let drivingOption of drivingOptions" class="filter-option">
+          <h2>{{ drivingOption.name }}</h2>
+          <fa-icon [icon]="drivingOption.icon" size="2x" class="filter-icon"></fa-icon>
+        </div>
+      </div>
+      <div class="lots-matrix">
+        <div *ngFor="let rowIdx of [].constructor(maxRows); let i = index" class="lots-row">
+          <ng-container *ngFor="let group of chunkedGroups">
+            <ng-container *ngIf="group.pairs[i] as chunk">
+              <div class="lot" *ngFor="let lot of chunk">
+                <ng-container *ngIf="lot.value === 1; else showLabel">
+                  <fa-icon [icon]="faCheck"></fa-icon>
+                </ng-container>
+                <ng-template #showLabel>
+                  <h1>{{ group.name }}{{ lot.idx }}</h1>
+                </ng-template>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="!group.pairs[i]">
+              <div class="lot"></div>
+              <div class="lot"></div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
 
+    </div>
 </app-header>
