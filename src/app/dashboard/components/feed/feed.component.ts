@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HttpDataService } from '../../../services/http-data.service';
 import { Camera } from '../../../models/camera.model';
 import { Notification } from '../../../models/notification.model';
-import {HeaderComponent} from '../../../shared/components/header/header.component';
+import { HeaderComponent } from "../../../shared/components/header/header.component";
 
 @Component({
   selector: 'app-feed',
