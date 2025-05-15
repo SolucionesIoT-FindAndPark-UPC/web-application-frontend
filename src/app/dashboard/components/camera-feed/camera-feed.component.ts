@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-camera-feed',
   imports: [CommonModule],
   templateUrl: './camera-feed.component.html',
+  standalone: true,
   styleUrls: ['./camera-feed.component.css']
 })
 export class CameraFeedComponent {
-  cameras = [
+  @Input() cameras = [
     {
       id: 1,
       name: "Cámara #1",
