@@ -30,7 +30,7 @@
             <ng-container *ngIf="group.pairs[i] as chunk">
               <div class="lot" *ngFor="let lot of chunk">
                 <ng-container *ngIf="lot.value === 1; else showLabel">
-                  <fa-icon [icon]="faCheck"></fa-icon>
+                  <fa-icon [icon]="icons.car" size="2x"></fa-icon>
                 </ng-container>
                 <ng-template #showLabel>
                   <h1>{{ group.name }}{{ lot.idx }}</h1>
@@ -44,6 +44,6 @@
           </ng-container>
         </div>
       </div>
-
     </div>
+  </div>
 </app-header>

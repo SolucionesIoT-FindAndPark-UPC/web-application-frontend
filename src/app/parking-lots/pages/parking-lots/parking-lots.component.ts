@@ -21,7 +21,8 @@ export class ParkingLotsComponent {
   }
   icons = {
     circleDot: faCircleDot,
-    filter: faFilter
+    filter: faFilter,
+    car: faCar
   }
   drivingOptions = [
     { name: 'Car', icon: faCar },
@@ -40,5 +41,4 @@ export class ParkingLotsComponent {
     )
   }));
   maxRows = Math.max(...this.chunkedGroups.map(g => g.pairs.length));
-  protected readonly faCheck = faCheck;
 }
