@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-validation',
@@ -12,7 +13,7 @@ export class ValidationComponent implements OnInit {
 
   subscriptionForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -31,5 +32,7 @@ export class ValidationComponent implements OnInit {
     if (this.subscriptionForm.valid) {
       console.log('Form submitted:', this.subscriptionForm.value);
     }
+    this.router.navigate(['/monitoring-page']);
+
   }
 }
