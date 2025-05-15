@@ -1,69 +1,70 @@
-<app-header></app-header>
-
-<div class="parking-lots-page">
-  <div class="main-content">
-    <div class="top-bar">
-      <div class="back-button">← Feed</div>
-      <div class="title">Mall At Millenia</div>
-      <div class="user-info">
-      </div>
-    </div>
-    <div class="availability-section">
-      <h2 class="availability-title">PARKING LOT AVAILABILITY:</h2>
-      <div class="availability-numbers">
-        <div class="occupied">
-          <div class="indicator red"></div>
-          <span>1000</span>
-        </div>
-        <div class="free">
-          <div class="indicator green"></div>
-          <span>400</span>
+<app-header>
+  <div class="parking-lots-page">
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="back-button">← Feed</div>
+        <div class="title">Mall At Millenia</div>
+        <div class="user-info">
         </div>
       </div>
-    </div>
-    <div class="content-area">
-      <div class="filters-container">
-        <div class="filters-header">
-          <span>Filters</span>
-          <div class="filter-icon"></div>
-        </div>
-        <div class="filter-options">
-          <button class="filter-button car" (click)="filterByVehicle('car')">
-            <div class="button-icon car-icon"></div>
-            <span>Car</span>
-          </button>
-          <button class="filter-button bike" (click)="filterByVehicle('bike')">
-            <div class="button-icon bike-icon"></div>
-            <span>Bike</span>
-          </button>
-          <button class="filter-button taxi" (click)="filterByVehicle('taxi')">
-            <div class="button-icon taxi-icon"></div>
-            <span>Taxi</span>
-          </button>
+      <div class="availability-section">
+        <h2 class="availability-title">PARKING LOT AVAILABILITY:</h2>
+        <div class="availability-numbers">
+          <div class="occupied">
+            <div class="indicator red"></div>
+            <span>1000</span>
+          </div>
+          <div class="free">
+            <div class="indicator green"></div>
+            <span>400</span>
+          </div>
         </div>
       </div>
-      <div class="parking-lots-grid">
-        <div class="lot">A01 <div class="car-icon occupied-icon"></div></div>
-        <div class="lot free"></div>
-        <div class="lot">B06 <div class="car-icon free-icon"></div></div>
-        <div class="lot occupied"></div>
-        <div class="lot">A07 <div class="car-icon occupied-icon"></div></div>
-        <div class="lot free"></div>
-        <div class="lot">C07 <div class="car-icon free-icon"></div></div>
-        <div class="lot occupied"></div>
-        <div class="lot">A03 <div class="car-icon occupied-icon"></div></div>
-        <div class="lot free"></div>
-        <div class="lot">C08 <div class="car-icon free-icon"></div></div>
-        <div class="lot occupied"></div>
-        <div class="lot">A09 <div class="car-icon occupied-icon"></div></div>
-        <div class="lot occupied"></div>
-        <div class="lot">B04 <div class="car-icon free-icon"></div></div>
-        <div class="lot free"></div>
-        <div class="lot">B09 <div class="car-icon free-icon"></div></div>
-        <div class="lot occupied"></div>
-        <div class="lot">A05 <div class="car-icon occupied-icon"></div></div>
-        <div class="lot free"></div>
+      <div class="content-area">
+        <div class="filters-container">
+          <div class="filters-header">
+            <span>Filters</span>
+            <div class="filter-icon"></div>
+          </div>
+          <div class="filter-options">
+            <button class="filter-button car" (click)="filterByVehicle('car')">
+              <div class="button-icon car-icon"></div>
+              <span>Car</span>
+            </button>
+            <button class="filter-button bike" (click)="filterByVehicle('bike')">
+              <div class="button-icon bike-icon"></div>
+              <span>Bike</span>
+            </button>
+            <button class="filter-button taxi" (click)="filterByVehicle('taxi')">
+              <div class="button-icon taxi-icon"></div>
+              <span>Taxi</span>
+            </button>
+          </div>
+        </div>
+        <div class="parking-lots-grid">
+          <div class="lot">A01 <div class="car-icon occupied-icon"></div></div>
+          <div class="lot free"></div>
+          <div class="lot">B06 <div class="car-icon free-icon"></div></div>
+          <div class="lot occupied"></div>
+          <div class="lot">A07 <div class="car-icon occupied-icon"></div></div>
+          <div class="lot free"></div>
+          <div class="lot">C07 <div class="car-icon free-icon"></div></div>
+          <div class="lot occupied"></div>
+          <div class="lot">A03 <div class="car-icon occupied-icon"></div></div>
+          <div class="lot free"></div>
+          <div class="lot">C08 <div class="car-icon free-icon"></div></div>
+          <div class="lot occupied"></div>
+          <div class="lot">A09 <div class="car-icon occupied-icon"></div></div>
+          <div class="lot occupied"></div>
+          <div class="lot">B04 <div class="car-icon free-icon"></div></div>
+          <div class="lot free"></div>
+          <div class="lot">B09 <div class="car-icon free-icon"></div></div>
+          <div class="lot occupied"></div>
+          <div class="lot">A05 <div class="car-icon occupied-icon"></div></div>
+          <div class="lot free"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+</app-header>
