@@ -1,8 +1,10 @@
-<div class="feed-container">
-  <div class="camera-feed">
-    <app-camera-feed [cameras]="cameras"></app-camera-feed>
+<app-header>
+  <div class="feed-container">
+    <div class="camera-feed">
+      <app-camera-feed [cameras]="cameras"></app-camera-feed>
+    </div>
+    <div class="notification-bar">
+      <app-notifications-bar [notifications]="notifications"></app-notifications-bar>
+    </div>
   </div>
-  <div class="notification-bar">
-    <app-notifications-bar [notifications]="notifications"></app-notifications-bar>
-  </div>
-</div>
+</app-header>
