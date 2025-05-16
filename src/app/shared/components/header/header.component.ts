@@ -7,13 +7,15 @@ import {
   faTicketSimple,
 } from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   imports: [
     FaIconComponent,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './header.component.html',
   standalone: true,
@@ -25,12 +27,15 @@ export class HeaderComponent {
     chevronDown: faChevronDown,
     settings: faGear
   }
+  routes = {
+    settings: "settings",
+  }
   options = [
-    { name: 'Feed', icon: faChartBar },
-    { name: 'Monitoring', icon: faCamera },
-    { name: 'Allotment', icon: faParking },
-    { name: 'Parking Fee', icon: faTicketSimple },
-    { name: 'Statistics', icon: faChartLine },
+    { name: 'Feed', icon: faChartBar, route: 'dashboard-page' },
+    { name: 'Monitoring', icon: faCamera, route: 'monitoring-page' },
+    { name: 'Allotment', icon: faParking, route: 'allotment' },
+    { name: 'Parking Fee', icon: faTicketSimple, route: 'parking-lots' },
+    { name: 'Statistics', icon: faChartLine, route: 'statistics' },
   ]
   sidebarOptions = {
     feed: 'Feed',
@@ -42,6 +47,18 @@ export class HeaderComponent {
   usernameCache = null;
   iconCache = null;
   hasUnreadNotifications = false;
+  dropdownOpen = false;
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  closeDropdown() {
+    this.dropdownOpen = false;
+  }
+
+  constructor(private router: Router) {
+  }
 
   getIconCache() {
     if (this.iconCache) {
@@ -57,6 +74,10 @@ export class HeaderComponent {
     } else {
       return 'John Doe';
     }
+  }
+
+  goTo(route: string) {
+    this.router.navigate([route]);
   }
 
   protected readonly faChartBar = faChartBar;

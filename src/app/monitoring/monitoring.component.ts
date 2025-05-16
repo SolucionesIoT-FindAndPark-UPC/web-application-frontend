@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {HeaderComponent} from '../shared/components/header/header.component';
 @Component({
   selector: 'app-monitoring',
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './monitoring.component.html',
   standalone: true,
   styleUrl: './monitoring.component.css'

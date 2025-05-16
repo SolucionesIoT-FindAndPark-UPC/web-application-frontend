@@ -14,6 +14,11 @@ export class LoginComponent {
 
   onSubmit(): void {
     // Redirige al componente Monitoring
-    this.router.navigate(['/monitoring-page']);
+    this.router.navigate(['/dashboard-page']);
+  }
+
+  onRegister(): void {
+    // Redirige al componente Register
+    this.router.navigate(['/register']);
   }
 }

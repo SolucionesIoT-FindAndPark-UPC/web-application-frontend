@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-notifications-bar',
   imports: [CommonModule],
   templateUrl: './notifications-bar.component.html',
+  standalone: true,
   styleUrl: './notifications-bar.component.css'
 })
 export class NotificationsBarComponent {
-  notifications = [
+  @Input() notifications = [
     { id: 1, message: "Placa ABC-123 ha salido." },
     { id: 2, message: "Placa ABC-123 no ha registrado el pago." },
     { id: 3, message: "Placa XYZ-102 ha pagado con éxito." },

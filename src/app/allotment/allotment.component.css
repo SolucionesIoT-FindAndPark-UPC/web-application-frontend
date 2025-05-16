@@ -6,8 +6,7 @@ body {
 .parking-lots-page {
   display: flex;
   width: 100%;
-  min-height: 100vh;
-  background-color: #1E2337;
+  min-height: 100%;
   color: white;
 }
 
