@@ -1,0 +1,317 @@
+/* Base y Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white; /* Color de texto por defecto para la pantalla */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Puedes ajustar la fuente */
+  background-color: #2e3447; /* Color de fondo de la pantalla */
+  overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.parking-fees-container-v2 {
+  padding: 24px;
+  max-width: 900px; /* Ancho máximo para la pantalla */
+  margin: 30px auto; /* Centra el contenedor y da margen superior */
+  background-color: #2e3447;
+}
+
+.fees-header-v2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-arrow-btn-v2 {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.back-arrow-btn-v2 i {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.fees-header-v2 h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.fees-content-wrapper {
+  display: flex;
+  gap: 20px; /* Espacio entre las columnas izquierda y derecha */
+  flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+}
+
+.left-column-fees,
+.right-column-fees {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre las tarjetas dentro de cada columna */
+  flex: 1; /* Permite que ambas columnas crezcan y ocupen el espacio disponible */
+  min-width: 300px; /* Ancho mínimo para cada columna antes de apilarse */
+}
+
+.fee-option-card-v2 {
+  background-color: #4a546d;
+  border-radius: 12px;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: 70px;
+}
+
+.fee-label-v2 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex-grow: 1; /* Permite que el label ocupe el espacio */
+}
+
+.fee-value {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 15px; /* Espacio entre el valor y el botón */
+}
+
+.fee-detail {
+  color: #c0c0c0; /* Color gris para el detalle "At 10PM" */
+  font-size: 0.9rem;
+  margin-left: 10px; /* Espacio a la izquierda del detalle */
+}
+
+.modify-btn-v2 {
+  background: none;
+  border: none;
+  color: #9ea4b4;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px; /* Padding para el botón de icono */
+  border-radius: 50%; /* Para que sea un círculo */
+  transition: background-color 0.2s ease;
+  display: flex; /* Para centrar el icono si es necesario */
+  align-items: center;
+  justify-content: center;
+}
+
+.modify-btn-v2 i {
+  font-size: 1.1rem; /* Tamaño del icono de lápiz */
+  color: #9ea4b4;
+}
+
+.modify-btn-v2:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Specific styles for Promotional Discounts */
+.promotional-discounts {
+  flex-direction: column; /* Cambia la dirección a columna para header y grid */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  padding-bottom: 15px; /* Ajusta el padding inferior */
+}
+
+.promotional-discounts .card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px; /* Espacio entre el header y la cuadrícula de descuentos */
+}
+
+.shop-discounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas responsivas para logos */
+  gap: 15px; /* Espacio entre los elementos de la cuadrícula */
+  width: 100%;
+  justify-items: center; /* Centra los items horizontalmente en la cuadrícula */
+}
+
+.discount-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.shop-logo {
+  width: 60px; /* Tamaño de los logos */
+  height: 60px;
+  object-fit: contain; /* Asegura que el logo se ajuste sin cortarse */
+  border-radius: 8px; /* Ligero borde redondeado */
+}
+
+.discount-percent {
+  color: #b0b0b0; /* Color gris para el porcentaje */
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Specific styles for Fees By Vehicle Type */
+.fees-by-vehicle-type {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 15px;
+}
+
+.fees-by-vehicle-type .card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.vehicle-fees-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vehicle-fee-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.vehicle-fee-item span:last-child {
+  font-weight: 600;
+}
+
+/* Save Changes Button */
+.save-changes-btn {
+  background-color: #4CAF50; /* Un verde vibrante */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-end; /* Alinea el botón a la derecha dentro de su columna */
+  margin-top: 20px; /* Espacio superior */
+}
+
+.save-changes-btn:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .parking-fees-container-v2 {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .fees-header-v2 {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .fees-header-v2 h1 {
+    font-size: 1.8rem;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .back-arrow-btn-v2 {
+    align-self: flex-start;
+  }
+
+  .fees-content-wrapper {
+    flex-direction: column; /* Apila las columnas en pantallas más pequeñas */
+    gap: 15px;
+  }
+
+  .left-column-fees,
+  .right-column-fees {
+    min-width: unset; /* Reinicia el min-width */
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .fee-option-card-v2 {
+    padding: 15px 20px;
+  }
+
+  .fee-label-v2, .fee-value {
+    font-size: 1rem;
+  }
+
+  .promotional-discounts .card-header,
+  .fees-by-vehicle-type .card-header {
+    flex-direction: row; /* Mantener en fila el header de promociones/vehículos */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shop-discounts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta grid para menos espacio */
+    gap: 10px;
+  }
+
+  .shop-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .discount-percent {
+    font-size: 0.8rem;
+  }
+
+  .save-changes-btn {
+    width: 100%; /* El botón ocupa todo el ancho */
+    align-self: center; /* Centra el botón */
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fees-header-v2 h1 {
+    font-size: 1.5rem;
+  }
+
+  .back-arrow-btn-v2 {
+    font-size: 0.9rem;
+  }
+
+  .back-arrow-btn-v2 i {
+    font-size: 1rem;
+  }
+
+  .fee-label-v2, .fee-value {
+    font-size: 0.95rem;
+  }
+
+  .modify-btn-v2 {
+    font-size: 0.9rem;
+  }
+
+  .shop-discounts-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas muy pequeñas para logos */
+  }
+
+  .shop-logo {
+    width: 40px;
+    height: 40px;
+  }
+}

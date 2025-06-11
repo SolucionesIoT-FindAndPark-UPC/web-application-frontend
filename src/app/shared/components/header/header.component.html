@@ -1,10 +1,7 @@
 <div class="entirety">
   <div class="header">
     <div class="logo-container">
-      <img
-        src="LOGO.png"
-        alt="ParkPlus Logo"
-        class="logo"/>
+      <img src="LOGO.png" alt="ParkPlus Logo" class="logo"/>
       <h1>ARK <span class="blue">UP</span></h1>
     </div>
     <div class="white-border-container">
@@ -25,29 +22,29 @@
         </div>
       </div>
     </div>
-    </div>
-  <div>
-    <div class="white-border-below"></div>
-    <div class="sidebar">
-      <div class="options-container">
+  </div>
+  <div class="white-border-below"></div>
+
+  <div class="main-content-area">
+    <div class="sidebar-wrapper"> <div class="options-container">
         <div *ngFor="let option of options" class="option clickable" (click)="goTo(option.route)">
           <fa-icon [icon]="option.icon" size="2x"></fa-icon>
-          <h1>{{option.name}}</h1>
+          <h2>{{option.name}}</h2>
         </div>
       </div>
+      <div class="white-border-below"></div>
+      <div class="setting-sidebar"> <div class="setting-container">
+          <div class="option clickable" (click)="goTo(routes.settings)">
+            <fa-icon [icon]="icons.settings" size="2x"></fa-icon>
+            <h2>Settings</h2>
+          </div>
+        </div>
+      </div>
+      <div class="white-border-below"></div>
     </div>
-    <div class="white-border-below-small"></div>
-    <div class="setting-sidebar">
-      <div class="setting-container">
-        <div class="option clickable" (click)="goTo(routes.settings)">
-          <fa-icon [icon]="icons.settings" size="2x"></fa-icon>
-          <h1>Settings</h1>
-        </div>
-      </div>
+
+    <div class="content">
+      <ng-content></ng-content>
     </div>
   </div>
-  <div class="white-line"></div>
-</div>
-<div class="content">
-  <ng-content></ng-content>
-</div>
+  </div>

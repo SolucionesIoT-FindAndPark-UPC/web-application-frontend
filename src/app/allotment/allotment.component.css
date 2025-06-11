@@ -1,144 +1,205 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-}
-
-.parking-lots-page {
-  display: flex;
-  width: 100%;
-  min-height: 100%;
+* {
+  box-sizing: border-box;
   color: white;
 }
 
-.sidebar {
-  background-color: #2E3447;
-  width: 250px;
-  padding: 20px;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.user-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  min-width: 160px;
+  background: #23263a;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  z-index: 20;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 8px 0;
+}
+
+.dropdown-item {
+  padding: 10px 24px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dropdown-item:hover {
+  background: #3d52cb;
+}
+
+.entirety {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #2e3447;
+}
+
+.header {
+    background-color: #2e3447;
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .logo {
-  background-color: #5E677D;
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-container h1 {
   color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: 10px;
 }
 
-.app-name {
-  font-size: 1.2rem;
-  font-weight: bold;
+.blue {
+    color: #3d52cb;
 }
 
-.up {
-  color: #50A3E7;
+.white-border-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
 }
 
-.navigation {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+.white-border {
+    background-color: white;
+    height: 80%;
+    width: 2px;
+    border-radius: 5%;
 }
 
-.nav-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.nav-item.active {
-  background-color: #434C5E;
+.search {
+    background-color: #2e3447;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 20px;
+    border: solid 1px #ffffff;
+    flex-grow: 1;
+    max-width: 400px;
+    margin-left: auto;
 }
 
-.nav-item:hover {
-  background-color: #434C5E;
+.user-icon {
+    height: 60px;
+    object-fit: cover;
+    width: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 5px;
+    cursor: pointer;
 }
 
-.nav-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  background-color: #B0B8C4;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+.user-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
 }
 
-.nav-icon.monitoring {
-  mask-image: url('https://i.postimg.cc/br4zR0Fv/monitoring-icon.png');
-  background-color: #B0B8C4;
+.clickable {
+    cursor: pointer;
 }
 
-.nav-item.allotment .nav-icon {
-  background-color: #50A3E7;
-  font-weight: bold;
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  width: 24px;
-  height: 24px;
+.white-border-below.header-divider {
+    width: 100%;
+    height: 2px;
+    background-color: white;
 }
 
-.nav-icon.fee {
-  mask-image: url('https://i.postimg.cc/J0F989Lg/parking-fee-icon.png');
-  background-color: #B0B8C4;
+.main-content-area {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.nav-icon.stats {
-  mask-image: url('https://i.postimg.cc/W1qF2P0D/statistics-icon.png');
-  background-color: #B0B8C4;
+.sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #2E3447;
+    padding-top: 20px;
+    flex-shrink: 0;
+    transition: width 0.3s ease;
 }
 
-.nav-item span {
-  font-size: 1rem;
+.options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    padding-left: 32px;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
-.settings {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.settings:hover {
-  background-color: #434C5E;
+.setting-sidebar {
+    background-color: #2E3447;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.settings-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  mask-image: url('https://i.postimg.cc/pVnB94xC/settings-icon.png');
-  background-color: #B0B8C4;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+.setting-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding-left: 32px;
 }
 
-.settings span {
-  font-size: 1rem;
+.sidebar-wrapper > .white-border-below {
+    width: 100%;
+    background-color: white;
+    height: 2px;
+    margin: 10px 0;
+}
+
+.parking-lots-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    color: white;
 }
 
 .main-content {
@@ -153,6 +214,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .back-button {
@@ -206,8 +269,10 @@ body {
 
 .availability-section {
   margin-bottom: 20px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .availability-title {
@@ -219,6 +284,8 @@ body {
 .availability-numbers {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .occupied,
@@ -245,13 +312,17 @@ body {
 
 .content-area {
   display: flex;
+  flex-grow: 1;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .filters-container {
   background-color: #2E3447;
   border-radius: 8px;
   padding: 15px;
-  margin-right: 20px;
+  flex-shrink: 0;
   width: 200px;
 }
 
@@ -317,13 +388,15 @@ body {
 
 .parking-lots-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  width: 50%;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  flex-grow: 1;
+  padding: 0;
   box-sizing: border-box;
   position: relative;
-  height: 120px;
+  min-height: 120px;
+  margin-left: 20px;
+
 }
 
 .lot {
@@ -331,10 +404,14 @@ body {
   border-radius: 10px;
   padding: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: #B0B8C4;
   position: relative;
-  font-size: 30px;
+  font-size: 20px;
+  text-align: center;
+  min-height: 80px;
 }
 
 .lot.free {
@@ -349,11 +426,10 @@ body {
 
 .occupied-icon,
 .free-icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 16px;
-  height: 16px;
+  position: static;
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
   mask-size: cover;
   -webkit-mask-size: cover;
 }
@@ -366,4 +442,166 @@ body {
 .free-icon {
   mask-image: url('https://i.postimg.cc/C5Dddztd/car.png');
   background-color: white;
+}
+
+@media (max-width: 1200px) {
+    .sidebar-wrapper {
+        width: 200px;
+    }
+    .content {
+        padding-left: 20px;
+    }
+    .search {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .white-border-container {
+        display: none;
+    }
+
+    .actions-container {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search {
+        width: 90%;
+        max-width: unset;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .user-container {
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .white-border-below.header-divider {
+        display: none;
+    }
+
+    .main-content-area {
+        display: flex;
+        flex-grow: 1;
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    }
+
+    .sidebar-wrapper {
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .options-container, .setting-container {
+        padding-left: 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .option {
+      justify-content: center;
+    }
+
+    .option h2 {
+        display: none;
+    }
+
+    .option fa-icon {
+        font-size: 1.5em !important;
+    }
+
+    .sidebar-wrapper > .white-border-below {
+        margin: 5px auto;
+        width: 80%;
+    }
+
+    .content {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .back-button,
+    .title,
+    .user-info {
+        margin-bottom: 10px;
+    }
+
+    .content-area {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .filters-container {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .filter-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-button {
+        flex-grow: 1;
+        max-width: 120px;
+    }
+
+    .parking-lots-grid {
+        width: 90%;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
+    .lot {
+        font-size: 16px;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+    .user-icon {
+        height: 50px;
+        width: 50px;
+    }
+    .options-container, .setting-container {
+        gap: 10px;
+    }
+    .dropdown-item {
+        padding: 8px 16px;
+    }
+
+    .parking-lots-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 5px;
+    }
 }
