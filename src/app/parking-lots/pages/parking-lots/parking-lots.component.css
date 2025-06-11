@@ -33,6 +33,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   width: 200px;
+  flex-shrink: 0;
 }
 
 .filters-icon-container {
@@ -53,27 +54,81 @@
 
 .parking-lots-container {
   margin-top: 12px;
-  display: flex;
-  gap: 12px;
+  display: flex; /* Permite que filtros y matriz estén lado a lado */
+  gap: 20px; /* Espacio entre el filtro y la matriz */
+  flex-wrap: nowrap; /* Por defecto, no se envuelve en pantallas grandes */
+  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+  flex-grow: 1; /* Permite que el contenedor crezca y ocupe espacio */
 }
 
 .lots-matrix {
-  display: flex;
-  flex-direction: column;
+  display: grid; /* Cambiado de flex a grid para la matriz de slots */
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Columnas que se ajustan, mínimo 80px */
+  gap: 8px; /* Espacio entre los slots */
+  flex-grow: 1; /* Permite que la matriz ocupe el espacio restante */
 }
+
 .lots-row {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
+  display: contents; /* Hace que los hijos de lots-row participen directamente en el grid del padre */
 }
+
 .lot {
   border: 2px solid #fff;
   background: #181a22;
   color: #fff;
-  width: 48px;
+  height: 80px; /* Altura fija para los slots */
   padding: 12px 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  text-align: center;
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho/alto */
+}
+
+/* Media Queries para Responsive */
+@media (max-width: 768px) {
+  .parking-lots-container {
+    flex-direction: column; /* Apila filtros y matriz en pantallas pequeñas */
+    align-items: center; /* Centra los elementos apilados */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  }
+
+  .filter-container {
+    width: 90%; /* Los filtros ocupan más ancho en móvil */
+    max-width: 300px; /* Limita el ancho en caso de pantallas muy anchas en modo móvil */
+    margin-bottom: 20px; /* Espacio debajo de los filtros */
+  }
+
+  .filter-option {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .filters-icon-container {
+    justify-content: center;
+  }
+
+  .lots-matrix {
+    width: 90%; /* La matriz ocupa más ancho en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Slots un poco más pequeños */
+  }
+
+  .lot {
+    height: 70px; /* Altura de los slots en móvil */
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lots-matrix {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Slots aún más pequeños para móviles muy chicos */
+  }
+
+  .lot {
+    height: 60px;
+    font-size: 0.9em;
+  }
 }

@@ -33,8 +33,8 @@ export class HeaderComponent {
   options = [
     { name: 'Feed', icon: faChartBar, route: 'dashboard-page' },
     { name: 'Monitoring', icon: faCamera, route: 'monitoring-page' },
-    { name: 'Allotment', icon: faParking, route: 'allotment' },
-    { name: 'Parking Fee', icon: faTicketSimple, route: 'parking-lots' },
+    { name: 'Allotment', icon: faParking, route: 'parking-lots' },
+    { name: 'Parking Fee', icon: faTicketSimple, route: 'parking-fees' },
     { name: 'Statistics', icon: faChartLine, route: 'statistics' },
   ]
   sidebarOptions = {

@@ -6,7 +6,7 @@
 /* Grid that supports dynamic number of cameras */
 .camera-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 5rem;
   font-family: 'Segoe UI', sans-serif;
@@ -14,13 +14,14 @@
 
 .camera-tile {
   background-color: transparent;
-  border-radius: 1.5rem;
+  border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   height: 250px;
+  width: 100%;
   margin-top: -3rem;
 }
 
@@ -30,7 +31,7 @@
   width: 100%;
   height: 70%;
   object-fit: cover;
-  border-radius: 1.5rem;
+  border-radius: 4px;
 }
 
 /* Minimal camera title under image */
