@@ -103,6 +103,7 @@ h2 {
 }
 
 /* 🔽 Responsive adjustments */
+/* 🔽 Responsive adjustments */
 @media (max-width: 900px) {
   .login-page {
     flex-direction: column;
@@ -115,8 +116,30 @@ h2 {
   }
 
   .right-form {
-    flex: none;
     padding: 1.5rem;
+    flex-grow: 1; /* <-- AÑADIDO: Hace que esta sección ocupe el espacio restante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-box {
+    background-color: transparent; 
+    box-shadow: none;            
+    width: 100%;                 
+  }
+
+  .form-box h2 {
+    color: white;
+  }
+
+  .btn-outline {
+    color: white;          
+    border-color: white;   
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
   }
 }
 

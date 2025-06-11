@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'validation', component: ValidationComponent},
   {path: 'statistics', component: StatisticsComponent},
   {path: 'settings', component: ProfileComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path: '', redirectTo: 'validation', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent }
 ];
 
