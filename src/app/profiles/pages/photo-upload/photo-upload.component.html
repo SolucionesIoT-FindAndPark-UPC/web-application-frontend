@@ -1,1 +1,45 @@
-<p>photo-upload works!</p>
+<app-header>
+    <div class="account-settings-container">
+    <div class="settings-header">
+        <button class="back-arrow-btn">
+        <i class="fas fa-arrow-left"></i> Feed
+        </button>
+        <h1>Account Settings</h1>
+    </div>
+
+    <div class="upload-section">
+        <div class="upload-box-outer">
+        <div class="header-upload-box">
+            <span class="upload-text">Upload File</span>
+            <span class="supported-files">Supported Files (.png, .jpg)</span>
+            <span class="red-dot"></span>
+        </div>
+
+        <div
+            class="upload-area"
+            id="dropArea"
+            (dragover)="onDragOver($event)"
+            (dragleave)="onDragLeave($event)"
+            (drop)="onDrop($event)"
+            [class.drag-over]="isDragging"
+        >
+            <div class="upload-icon-container">
+            <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <span class="upload-prompt">Choose or drag Photo</span>
+            <input
+            type="file"
+            id="fileInput"
+            (change)="onFileSelected($event)"
+            accept=".png, .jpg"
+            hidden
+            />
+            <button class="browse-files-btn" (click)="openFileBrowser()">
+            Browse Files
+            </button>
+        </div>
+        <button class="upload-btn" (click)="onUpload()">Upload</button>
+        </div>
+    </div>
+    </div>
+</app-header>

@@ -11,6 +11,7 @@ import {StatisticsComponent} from './statistics/page/statistics/statistics.compo
 import {ProfileComponent} from './profiles/pages/profile/profile.component';
 import { ParkingFeesComponent } from './parking-fees/parking-fees/parking-fees.component';
 import { ParkingFeesEditComponent } from './parking-fees/parking-fees-edit/parking-fees-edit.component';
+import { PhotoUploadComponent } from './profiles/pages/photo-upload/photo-upload.component';
 
 const routes: Routes = [
   {path: 'monitoring-page', component: MonitoringComponent},
@@ -21,9 +22,10 @@ const routes: Routes = [
   {path: 'validation', component: ValidationComponent},
   {path: 'statistics', component: StatisticsComponent},
   {path: 'settings', component: ProfileComponent},
+  {path: 'photo-upload', component: PhotoUploadComponent},
   {path: 'parking-fees', component: ParkingFeesComponent},
   {path: 'parking-fees-edit', component: ParkingFeesEditComponent},
-  {path: '', redirectTo: 'parking-fees-edit', pathMatch: 'full' },
+  {path: '', redirectTo: 'photo-upload', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent }
 ];
 
