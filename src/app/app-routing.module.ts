@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'photo-upload', component: PhotoUploadComponent},
   {path: 'parking-fees', component: ParkingFeesComponent},
   {path: 'parking-fees-edit', component: ParkingFeesEditComponent},
-  {path: '', redirectTo: 'photo-upload', pathMatch: 'full' },
+  {path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent }
 ];
 
