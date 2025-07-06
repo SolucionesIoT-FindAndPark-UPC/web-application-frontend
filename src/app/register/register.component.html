@@ -9,13 +9,18 @@
         <img src="https://github.com/SolucionesIoT-FindAndPark-UPC/web-application-frontend/blob/feat/login/src/assets/logo.png?raw=true" alt="Logo" class="logo" />
       </div>
 
-      <input type="text" placeholder="Full Name" class="input-field" />
-      <input type="email" placeholder="Email Address" class="input-field" />
-      <input type="password" placeholder="Password" class="input-field" />
-      <input type="password" placeholder="Confirm Password" class="input-field" />
+      <input type="text" placeholder="Full Name" class="input-field" [(ngModel)]="name" />
+      <input type="text" placeholder="Username" class="input-field" [(ngModel)]="username" />
+      <input type="email" placeholder="Email Address" class="input-field" [(ngModel)]="email" />
+      <input type="password" placeholder="Password" class="input-field" [(ngModel)]="password" />
+      <input type="password" placeholder="Confirm Password" class="input-field" [(ngModel)]="confirmPassword" />
 
       <div class="button-row">
         <button class="btn-filled" (click)="onSubmit()">Register</button>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
       </div>
     </div>
   </div>

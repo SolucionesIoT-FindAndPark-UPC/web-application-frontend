@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { CameraFeedComponent } from "../camera-feed/camera-feed.component";
 import { NotificationsBarComponent } from "../notifications-bar/notifications-bar.component";
 import { CommonModule } from '@angular/common';
-import { HttpDataService } from '../../../services/http-data.service';
 import { Camera } from '../../../models/camera.model';
 import { Notification } from '../../../models/notification.model';
 import { HeaderComponent } from "../../../shared/components/header/header.component";
+import { CameraFeedService } from '../../../services/camera-feed.service';
+import { VideoRecord } from '../../../models/video-record.model';
 
 @Component({
   selector: 'app-feed',
@@ -14,7 +15,6 @@ import { HeaderComponent } from "../../../shared/components/header/header.compon
   styleUrls: ['./feed.component.css'],
   imports: [CommonModule, CameraFeedComponent, NotificationsBarComponent, HeaderComponent],
   standalone: true,
-  providers: [HttpDataService]
 })
 export class FeedComponent implements OnInit {
   cameras: Camera[] = [
@@ -78,7 +78,23 @@ export class FeedComponent implements OnInit {
     { id: 15, message: "Placa YZA-369 ha pagado con éxito." }
   ];
 
+  constructor(private cameraFeedService: CameraFeedService) {}
+
   ngOnInit(): void {
-    console.log(this.cameras);
+    this.cameraFeedService.getVideoRecordsByParkingLot(1).subscribe((videoRecords: VideoRecord[]) => {
+      if (videoRecords.length > 0) {
+        const video = videoRecords[0];
+        const iotCamera: Camera = {
+          id: video.id,
+          name: 'Cámara IoT',
+          lastUpdate: new Date(video.timestamp).toLocaleString(),
+          lastDetection: new Date(video.timestamp).toLocaleString(),
+          status: 'Online',
+          imageUrl: video.videoUrl
+        };
+
+        this.cameras = [iotCamera, ...this.cameras];
+      }
+    });
   }
 }
