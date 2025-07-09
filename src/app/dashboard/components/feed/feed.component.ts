@@ -24,7 +24,7 @@ export class FeedComponent implements OnInit {
       lastUpdate: "Mar 09, 2025 10:22 AM",
       lastDetection: "Mar 09, 2025 10:27 AM",
       status: "Online",
-      imageUrl: "https://www.arqhys.com/wp-content/uploads/2012/12/Diseno-de-estacionamientos-13-768x432.jpg"
+      imageUrl: "http://172.20.10.3/capture"
     },
     {
       id: 2,
